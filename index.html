@@ -8,17 +8,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #8B4513;
-            --primary-dark: #654321;
-            --secondary: #228B22;
-            --accent: #DAA520;
-            --dark: #2F4F4F;
-            --light: #F5F5DC;
-            --text: #2F4F4F;
-            --text-light: #696969;
-            --white: #FFF8DC;
+            --primary: #2C5AA0;
+            --primary-dark: #1E3A8A;
+            --secondary: #DC2626;
+            --accent: #059669;
+            --dark: #1E293B;
+            --light: #F8FAFC;
+            --text: #334155;
+            --text-light: #64748B;
+            --white: #FFFFFF;
             --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            --shadow: 0 5px 15px rgba(139, 69, 19, 0.1);
+            --shadow: 0 5px 15px rgba(44, 90, 160, 0.1);
         }
 
         * {
@@ -130,14 +130,14 @@
             text-align: center;
             margin: 20px 0;
             padding: 15px;
-            background: rgba(139, 69, 19, 0.1);
+            background: rgba(44, 90, 160, 0.1);
             border-radius: 10px;
             border-left: 4px solid var(--accent);
         }
 
         .content-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin: 25px 0;
         }
@@ -199,7 +199,7 @@
         th, td {
             padding: 15px;
             text-align: left;
-            border-bottom: 1px solid rgba(139, 69, 19, 0.2);
+            border-bottom: 1px solid rgba(44, 90, 160, 0.2);
         }
 
         th {
@@ -209,7 +209,7 @@
         }
 
         tr:hover {
-            background: rgba(139, 69, 19, 0.05);
+            background: rgba(44, 90, 160, 0.05);
         }
 
         .skills-grid {
@@ -224,15 +224,15 @@
             padding: 15px;
             border-radius: 8px;
             text-align: center;
-            border: 1px solid rgba(139, 69, 19, 0.3);
+            border: 1px solid rgba(44, 90, 160, 0.3);
         }
 
         .impact-section {
-            background: linear-gradient(135deg, var(--light) 0%, #E8F5E8 100%);
+            background: linear-gradient(135deg, var(--light) 0%, #F0FDF4 100%);
             padding: 25px;
             border-radius: 10px;
             margin: 25px 0;
-            border: 2px solid var(--secondary);
+            border: 2px solid var(--accent);
         }
 
         .footer {
@@ -242,6 +242,17 @@
             border-top: 2px solid var(--primary);
             color: var(--text-light);
             font-size: 0.9rem;
+        }
+
+        .certification-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--white);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 5px;
+            font-weight: 500;
         }
 
         @media print {
@@ -266,6 +277,31 @@
             .page {
                 padding: 20px;
             }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            .page {
+                padding: 15px;
+            }
+            table {
+                font-size: 0.8rem;
+            }
+            th, td {
+                padding: 8px;
+            }
         }
     </style>
 </head>
@@ -281,47 +317,47 @@
             </div>
             <h1>Marcelle Larissa Tankui Tchouamouo</h1>
             <div class="slogan">
-                "Développeuse FullStack innovante au service de la FinTech africaine"
+                "Architecte de solutions FinTech innovantes pour la banque de demain"
             </div>
         </div>
 
         <div class="content-grid">
             <div class="card">
                 <h3><i class="fas fa-bullseye"></i> Métier Visé</h3>
-                <p><strong>Développeuse FullStack Senior</strong> spécialisée en solutions FinTech et systèmes distribués pour le marché africain.</p>
+                <p><strong>Architecte Logicielle Senior</strong> spécialisée en systèmes bancaires et FinTech</p>
             </div>
             <div class="card">
-                <h3><i class="fas fa-rocket"></i> Vision</h3>
-                <p>Révolutionner l'inclusion financière en Afrique grâce à des technologies innovantes et accessibles.</p>
+                <h3><i class="fas fa-rocket"></i> Vision 2028</h3>
+                <p>Concevoir les infrastructures technologiques des grandes institutions financières africaines</p>
             </div>
         </div>
 
-        <h2>Motivations Personnelles</h2>
+        <h2>Motivations & Ambitions</h2>
         <div class="content-grid">
             <div class="card">
-                <h4><i class="fas fa-heart"></i> Passion Technique</h4>
-                <p>Fascinée par la création de solutions complexes qui résolvent des problèmes réels dans le secteur financier.</p>
+                <h4><i class="fas fa-university"></i> Secteur Bancaire</h4>
+                <p>Moderniser les systèmes des banques traditionnelles avec des technologies innovantes</p>
             </div>
             <div class="card">
-                <h4><i class="fas fa-globe-africa"></i> Impact Social</h4>
-                <p>Contribuer au développement économique de l'Afrique en facilitant l'accès aux services financiers.</p>
+                <h4><i class="fas fa-mobile-alt"></i> FinTech Émergentes</h4>
+                <p>Contribuer au développement des startups financières disruptives en Afrique</p>
             </div>
             <div class="card">
-                <h4><i class="fas fa-chart-line"></i> Innovation</h4>
-                <p>Pousser les limites technologiques pour créer des produits financiers adaptés au contexte africain.</p>
+                <h4><i class="fas fa-shield-alt"></i> Sécurité & Conformité</h4>
+                <p>Garantir la sécurité et la conformité des systèmes financiers digitaux</p>
             </div>
             <div class="card">
-                <h4><i class="fas fa-users"></i> Communauté</h4>
-                <p>Inspirer et former la prochaine génération de femmes développeuses en Afrique.</p>
+                <h4><i class="fas fa-chart-line"></i> Data-Driven</h4>
+                <p>Lever la puissance des données pour l'innovation financière</p>
             </div>
         </div>
     </div>
 
-    <!-- Page 2: Compétences et Formation -->
+    <!-- Page 2: Compétences Techniques -->
     <div class="page">
-        <h2>Compétences & Roadmap de Développement</h2>
+        <h2>Expertise Technique & Roadmap</h2>
         
-        <h3>Compétences Actuelles</h3>
+        <h3>Stack Technologique Actuelle</h3>
         <div class="skills-grid">
             <div class="skill-item">React.js & JavaScript ES6+</div>
             <div class="skill-item">Node.js & Express</div>
@@ -333,238 +369,397 @@
             <div class="skill-item">Bootstrap & CSS3</div>
         </div>
 
-        <h3>Compétences à Acquérir</h3>
+        <h3>Compétences Spécialisées Banque/FinTech</h3>
         <div class="content-grid">
             <div class="card">
-                <h4><i class="fas fa-bolt"></i> Court Terme (6 mois)</h4>
+                <h4><i class="fas fa-bolt"></i> Court Terme (2025)</h4>
                 <ul>
-                    <li>TypeScript & Next.js</li>
-                    <li>Microservices Architecture</li>
-                    <li>Docker & DevOps</li>
-                    <li>Tests Automatisés</li>
+                    <li>Architecture Microservices</li>
+                    <li>Docker & Kubernetes</li>
+                    <li>API Banking Standards</li>
+                    <li>Security & Cryptography</li>
                 </ul>
             </div>
             <div class="card">
-                <h4><i class="fas fa-chart-line"></i> Moyen Terme (1-2 ans)</h4>
+                <h4><i class="fas fa-chart-line"></i> Moyen Terme (2026-2027)</h4>
                 <ul>
-                    <li>Architecture Cloud AWS</li>
+                    <li>Cloud Architecture (AWS/Azure)</li>
                     <li>Blockchain & Smart Contracts</li>
-                    <li>Machine Learning Basics</li>
-                    <li>Security Advanced</li>
+                    <li>Machine Learning Finance</li>
+                    <li>System Design & Scalability</li>
                 </ul>
-            </div>
-        </div>
-
-        <h3>Parcours de Formation</h3>
-        <div class="timeline">
-            <div class="timeline-item">
-                <strong>2024-2025</strong> - Certifications AWS Cloud Practitioner & Google Data Analysis
-            </div>
-            <div class="timeline-item">
-                <strong>2025</strong> - Spécialisation Architecture Microservices
-            </div>
-            <div class="timeline-item">
-                <strong>2026</strong> - Master en Systèmes Distribués (envisagé)
-            </div>
-            <div class="timeline-item">
-                <strong>2027</strong> - Certification Blockchain Developer
             </div>
         </div>
     </div>
 
-    <!-- Page 3: Plan d'Action -->
+    <!-- Page 3: Certifications Stratégiques -->
     <div class="page">
-        <h2>Plan d'Action Stratégique</h2>
+        <h2>Certifications Clés Banque/FinTech</h2>
         
-        <h3>Roadmap 1 An</h3>
+        <h3>Certifications Prioritaires 2025-2026</h3>
+        <div class="content-grid">
+            <div class="card">
+                <h4><i class="fab fa-aws"></i> AWS Certified Solutions Architect</h4>
+                <p><strong>Plateforme:</strong> Amazon Web Services</p>
+                <p><strong>Objectif:</strong> Architecture cloud pour applications financières</p>
+                <span class="certification-badge">Cloud</span>
+                <span class="certification-badge">Architecture</span>
+            </div>
+            <div class="card">
+                <h4><i class="fas fa-shield-alt"></i> Certified Ethical Hacker (CEH)</h4>
+                <p><strong>Plateforme:</strong> EC-Council</p>
+                <p><strong>Objectif:</strong> Sécurité des applications financières</p>
+                <span class="certification-badge">Sécurité</span>
+                <span class="certification-badge">Cybersécurité</span>
+            </div>
+            <div class="card">
+                <h4><i class="fas fa-project-diagram"></i> Google Professional Data Engineer</h4>
+                <p><strong>Plateforme:</strong> Google Cloud</p>
+                <p><strong>Objectif:</strong> Gestion données financières à grande échelle</p>
+                <span class="certification-badge">Data</span>
+                <span class="certification-badge">Big Data</span>
+            </div>
+        </div>
+
+        <h3>Certifications Avancées 2027-2028</h3>
+        <div class="content-grid">
+            <div class="card">
+                <h4><i class="fas fa-link"></i> Certified Blockchain Developer</h4>
+                <p><strong>Plateforme:</strong> Blockchain Council</p>
+                <p><strong>Objectif:</strong> Développement solutions blockchain financières</p>
+            </div>
+            <div class="card">
+                <h4><i class="fas fa-robot"></i> AWS Certified Machine Learning</h4>
+                <p><strong>Plateforme:</strong> Amazon Web Services</p>
+                <p><strong>Objectif:</strong> IA/ML pour risques et fraudes financiers</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 4: Parcours Académique -->
+    <div class="page">
+        <h2>Stratégie de Formation Académique</h2>
+        
+        <h3>Double Master Planifié</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <strong>2025-2026</strong> - <strong>Master en Génie Logiciel</strong><br>
+                Spécialisation Architecture des Systèmes d'Information
+            </div>
+            <div class="timeline-item">
+                <strong>2026-2027</strong> - <strong>Master en Data Science</strong><br>
+                Double diplôme - Intelligence Artificielle Appliquée à la Finance
+            </div>
+            <div class="timeline-item">
+                <strong>2027</strong> - <strong>Spécialisation Blockchain</strong><br>
+                Programme avancé FinTech & Smart Contracts
+            </div>
+        </div>
+
+        <h3>Universités et Programmes Ciblés</h3>
         <table>
             <thead>
                 <tr>
-                    <th>Trimestre</th>
+                    <th>Programme</th>
+                    <th>Institution</th>
+                    <th>Focus</th>
+                    <th>Durée</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Master Génie Logiciel</strong></td>
+                    <td>Université Internationale / En ligne</td>
+                    <td>Architecture Enterprise</td>
+                    <td>18 mois</td>
+                </tr>
+                <tr>
+                    <td><strong>Master Data Science</strong></td>
+                    <td>École Spécialisée / Programme double</td>
+                    <td>ML Finance & Analytics</td>
+                    <td>24 mois</td>
+                </tr>
+                <tr>
+                    <td><strong>Certifications Pro</strong></td>
+                    <td>Coursera, Udacity, AWS</td>
+                    <td>Compétences métier</td>
+                    <td>Continue</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Page 5: Plan d'Action 2025-2026 -->
+    <div class="page">
+        <h2>Plan d'Action 2025-2026</h2>
+        
+        <h3>Roadmap Détaillée Première Année</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Période</th>
                     <th>Objectifs Professionnels</th>
-                    <th>Formations</th>
-                    <th>Résultats Attendus</th>
+                    <th>Certifications</th>
+                    <th>Résultats Concrets</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td><strong>Q1 2025</strong></td>
-                    <td>Intégration entreprise FinTech</td>
-                    <td>AWS Cloud, TypeScript</td>
-                    <td>Poste Développeuse Junior</td>
+                    <td>Intégration entreprise FinTech/Banque</td>
+                    <td>AWS Cloud Practitioner</td>
+                    <td>Poste Développeuse FullStack</td>
                 </tr>
                 <tr>
                     <td><strong>Q2 2025</strong></td>
-                    <td>Lead feature majeure</td>
-                    <td>Architecture Microservices</td>
-                    <td>Promotion Mid-Level</td>
+                    <td>Lead projet paiements digitaux</td>
+                    <td>Début Master Génie Logiciel</td>
+                    <td>Augmentation responsabilités</td>
                 </tr>
                 <tr>
                     <td><strong>Q3 2025</strong></td>
-                    <td>Mentorat junior developers</td>
-                    <td>DevOps Fundamentals</td>
-                    <td>Reconnaissance interne</td>
+                    <td>Architecture microservices</td>
+                    <td>Docker & Kubernetes</td>
+                    <td>Promotion Tech Lead</td>
                 </tr>
                 <tr>
                     <td><strong>Q4 2025</strong></td>
-                    <td>Contributions open source</td>
-                    <td>Advanced Security</td>
-                    <td>Portfolio étendu</td>
+                    <td>Sécurité applications</td>
+                    <td>CEH Preparation</td>
+                    <td>Expertise reconnue</td>
                 </tr>
-            </tbody>
-        </table>
-
-        <h3>Vision 3 Ans</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Année</th>
-                    <th>Position Cible</th>
-                    <th>Compétences Maîtrisées</th>
-                    <th>Impact</th>
-                </tr>
-            </thead>
-            <tbody>
                 <tr>
                     <td><strong>2026</strong></td>
-                    <td>Développeuse FullStack Senior</td>
-                    <td>Cloud Architecture, Blockchain</td>
-                    <td>Lead technique sur projets majeurs</td>
-                </tr>
-                <tr>
-                    <td><strong>2027</strong></td>
-                    <td>Tech Lead / Architecte</td>
-                    <td>AI/ML Basics, System Design</td>
                     <td>Management petite équipe</td>
-                </tr>
-                <tr>
-                    <td><strong>2028</strong></td>
-                    <td>Head of Engineering</td>
-                    <td>Strategic Planning, Business</td>
-                    <td>Influence produits stratégiques</td>
+                    <td>AWS Solutions Architect</td>
+                    <td>Lead Developer/Architect</td>
                 </tr>
             </tbody>
         </table>
     </div>
 
-    <!-- Page 4: Expériences et Réseau -->
+    <!-- Page 6: Vision Long Terme 2027-2028 -->
     <div class="page">
-        <h2>Expériences Professionnelles & Réseautage</h2>
+        <h2>Vision 2027-2028</h2>
         
-        <h3>Expériences Planifiées</h3>
-        <div class="content-grid">
-            <div class="card">
-                <h4><i class="fas fa-briefcase"></i> 2025-2026</h4>
-                <p><strong>Développeuse FullStack</strong> en entreprise FinTech</p>
-                <p>Gestion projets paiements mobiles</p>
-            </div>
-            <div class="card">
-                <h4><i class="fas fa-star"></i> 2026-2027</h4>
-                <p><strong>Tech Lead</strong> startup innovante</p>
-                <p>Architecture solutions blockchain</p>
-            </div>
-            <div class="card">
-                <h4><i class="fas fa-rocket"></i> 2027-2028</h4>
-                <p><strong>Lead Architect</strong> scale-up africaine</p>
-                <p>Direction technique produits</p>
-            </div>
-        </div>
-
-        <h3>Réseau & Mentors Identifiés</h3>
+        <h3>Objectifs Stratégiques Long Terme</h3>
         <table>
             <thead>
                 <tr>
-                    <th>Type</th>
-                    <th>Contact</th>
+                    <th>Année</th>
+                    <th>Position Cible</th>
+                    <th>Domaine Expertise</th>
+                    <th>Impact Organisationnel</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>2027</strong></td>
+                    <td>Software Architect</td>
+                    <td>Architecture FinTech</td>
+                    <td>Design systèmes critiques</td>
+                </tr>
+                    <td><strong>2028</strong></td>
+                    <td>Head of Technology</td>
+                    <td>Stratégie Technologique</td>
+                    <td>Direction innovation digitale</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Spécialisations Sectorielles</h3>
+        <div class="content-grid">
+            <div class="card">
+                <h4><i class="fas fa-credit-card"></i> Paiements Digitaux</h4>
+                <p>Architecture systèmes de paiement sécurisés</p>
+            </div>
+            <div class="card">
+                <h4><i class="fas fa-chart-bar"></i> Risk Analytics</h4>
+                <p>Solutions ML pour gestion risques financiers</p>
+            </div>
+            <div class="card">
+                <h4><i class="fas fa-user-shield"></i> Digital Identity</h4>
+                <p>Systèmes d'identité digitale sécurisée</p>
+            </div>
+            <div class="card">
+                <h4><i class="fas fa-project-diagram"></i> API Banking</h4>
+                <p>Architecture Open Banking & APIs</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 7: Expériences Professionnelles -->
+    <div class="page">
+        <h2>Parcours Professionnel Planifié</h2>
+        
+        <h3>Expériences Ciblées Banque/FinTech</h3>
+        <div class="content-grid">
+            <div class="card">
+                <h4><i class="fas fa-briefcase"></i> 2025-2026</h4>
+                <p><strong>Développeuse FullStack Senior</strong></p>
+                <p>Startup FinTech innovante</p>
+                <p>Focus: Paiements mobiles & APIs</p>
+            </div>
+            <div class="card">
+                <h4><i class="fas fa-star"></i> 2026-2027</h4>
+                <p><strong>Tech Lead / Software Architect</strong></p>
+                <p>Institution bancaire traditionnelle</p>
+                <p>Focus: Transformation digitale</p>
+            </div>
+            <div class="card">
+                <h4><i class="fas fa-rocket"></i> 2027-2028</h4>
+                <p><strong>Head of Technology / CTO</strong></p>
+                <p>Scale-up FinTech africaine</p>
+                <p>Focus: Stratégie & Innovation</p>
+            </div>
+        </div>
+
+        <h3>Projets Stratégiques</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <strong>2025</strong> - <strong>Plateforme paiements unifiés</strong><br>
+                Intégration multiple canaux paiement
+            </div>
+            <div class="timeline-item">
+                <strong>2026</strong> - <strong>Système anti-fraude IA</strong><br>
+                Machine learning pour détection fraudes
+            </div>
+            <div class="timeline-item">
+                <strong>2027</strong> - <strong>Architecture Open Banking</strong><br>
+                APIs sécurisées pour écosystème financier
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 8: Réseau & Mentorat -->
+    <div class="page">
+        <h2>Réseau Stratégique & Mentorat</h2>
+        
+        <h3>Mentors Identifiés</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Mentor</th>
+                    <th>Expertise</th>
                     <th>Apport</th>
                     <th>Statut</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>Mentor Technique</strong></td>
-                    <td>Lead Developer FinTech</td>
-                    <td>Architecture systèmes complexes</td>
-                    <td>À identifier</td>
+                    <td><strong>M. Jacques Espoir</strong></td>
+                    <td>Architecture FinTech</td>
+                    <td>Design systèmes complexes</td>
+                    <td>Confirmé</td>
                 </tr>
                 <tr>
-                    <td><strong>Mentor Business</strong></td>
-                    <td>Product Manager senior</td>
-                    <td>Vision produit & marché</td>
-                    <td>Réseau AfricanWITS</td>
+                    <td><strong>M. Tankui Frank</strong></td>
+                    <td>Stratégie Technologique</td>
+                    <td>Leadership & vision</td>
+                    <td>Confirmé</td>
                 </tr>
                 <tr>
-                    <td><strong>Pair Programming</strong></td>
-                    <td>Développeurs seniors</td>
-                    <td>Code review & best practices</td>
-                    <td>Communautés tech locales</td>
-                </tr>
-                <tr>
-                    <td><strong>Réseau FinTech</strong></td>
-                    <td>Professionnels secteur</td>
-                    <td>Opportunités & tendances</td>
-                    <td>Événements & meetups</td>
+                    <td><strong>Mentor AfricanWITS</strong></td>
+                    <td>Développement Carrière</td>
+                    <td>Navigation écosystème</td>
+                    <td>En cours</td>
                 </tr>
             </tbody>
         </table>
-    </div>
 
-    <!-- Page 5: Obstacles et Impact -->
-    <div class="page">
-        <h2>Défis & Impact Sociétal</h2>
-        
-        <h3>Obstacles Anticipés & Solutions</h3>
+        <h3>Réseau Professionnel à Développer</h3>
         <div class="content-grid">
             <div class="card">
-                <h4><i class="fas fa-lock"></i> Défi Technique</h4>
-                <p><strong>Complexité systèmes distribués</strong></p>
-                <p><em>Solution :</em> Formation continue + mentorat spécialisé</p>
+                <h4><i class="fas fa-network-wired"></i> Communautés Tech</h4>
+                <p>Google Developer Groups, AWS User Groups</p>
             </div>
             <div class="card">
-                <h4><i class="fas fa-users"></i> Défi Équipe</h4>
-                <p><strong>Leadership technique</strong></p>
-                <p><em>Solution :</em> Soft skills development + management training</p>
+                <h4><i class="fas fa-handshake"></i> Associations FinTech</h4>
+                <p>Africa FinTech Network, Cameroun FinTech</p>
             </div>
             <div class="card">
-                <h4><i class="fas fa-chart-bar"></i> Défi Marché</h4>
-                <p><strong>Concurrence internationale</strong></p>
-                <p><em>Solution :</em> Spécialisation niche africaine + innovation locale</p>
+                <h4><i class="fas fa-graduation-cap"></i> Alumni Masters</h4>
+                <p>Réseaux diplômés programmes ciblés</p>
             </div>
             <div class="card">
-                <h4><i class="fas fa-balance-scale"></i> Défi Équilibre</h4>
-                <p><strong>Vie professionnelle/personnelle</strong></p>
-                <p><em>Solution :</em> Organisation rigoureuse + communauté support</p>
+                <h4><i class="fas fa-briefcase"></i> Recruteurs Spécialisés</h4>
+                <p>Cabinet recrutement secteur financier</p>
             </div>
         </div>
+    </div>
 
+    <!-- Page 9: Défis & Solutions -->
+    <div class="page">
+        <h2>Défis Anticipés & Stratégies</h2>
+        
+        <h3>Obstacles et Plans de Contournement</h3>
+        <div class="content-grid">
+            <div class="card">
+                <h4><i class="fas fa-lock"></i> Complexité Technique</h4>
+                <p><strong>Défi:</strong> Architecture systèmes financiers critiques</p>
+                <p><em>Solution:</em> Mentorat expert + formation progressive</p>
+            </div>
+            <div class="card">
+                <h4><i class="fas fa-users"></i> Leadership Technique</h4>
+                <p><strong>Défi:</strong> Management équipes pluridisciplinaires</p>
+                <p><em>Solution:</em> Formation management + expérience progressive</p>
+            </div>
+            <div class="card">
+                <h4><i class="fas fa-balance-scale"></i> Double Master</h4>
+                <p><strong>Défi:</strong> Charge travail études + profession</p>
+                <p><em>Solution:</em> Planning rigoureux + programmes flexibles</p>
+            </div>
+            <div class="card">
+                <h4><i class="fas fa-chart-bar"></i> Concurrence</h4>
+                <p><strong>Défi:</strong> Marché très compétitif</p>
+                <p><em>Solution:</em> Spécialisation niche + réseau solide</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 10: Impact & Conclusion -->
+    <div class="page">
+        <h2>Impact & Vision Sociétale</h2>
+        
         <div class="impact-section">
-            <h3>Impact Attendu</h3>
+            <h3>Impact Multi-dimensionnel</h3>
             <div class="content-grid">
                 <div class="card">
                     <h4><i class="fas fa-user"></i> Personnel</h4>
                     <ul>
-                        <li>Expertise technique reconnue</li>
+                        <li>Expertise technique mondialement reconnue</li>
                         <li>Leadership dans la tech africaine</li>
-                        <li>Indépendance financière</li>
+                        <li>Indépendance financière et professionnelle</li>
                     </ul>
                 </div>
                 <div class="card">
                     <h4><i class="fas fa-users"></i> Communautaire</h4>
                     <ul>
-                        <li>Mentorat jeunes développeuses</li>
-                        <li>Contributions open source</li>
-                        <li>Organisation workshops tech</li>
+                        <li>Mentorat jeunes femmes en tech</li>
+                        <li>Contributions open source FinTech</li>
+                        <li>Organisation workshops spécialisés</li>
                     </ul>
                 </div>
                 <div class="card">
-                    <h4><i class="fas fa-globe"></i> Sociétal</h4>
+                    <h4><i class="fas fa-globe-africa"></i> Sociétal</h4>
                     <ul>
-                        <li>Solutions FinTech inclusives</li>
-                        <li>Innovation made in Africa</li>
+                        <li>Modernisation secteur bancaire africain</li>
+                        <li>Innovation financière inclusive</li>
                         <li>Inspiration générations futures</li>
                     </ul>
                 </div>
             </div>
+        </div>
+
+        <h3>Engagement AfricanWITS</h3>
+        <div class="card">
+            <p><strong>Je m'engage à:</strong></p>
+            <ul>
+                <li>Représenter dignement le programme AfricanWITS</li>
+                <li>Partager mes apprentissages avec la communauté</li>
+                <li>Contribuer au développement de l'écosystème tech féminin</li>
+                <li>Incarner les valeurs d'excellence et de leadership</li>
+            </ul>
         </div>
 
         <div class="footer">
