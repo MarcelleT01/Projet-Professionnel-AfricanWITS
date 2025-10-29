@@ -12,7 +12,658 @@
         }
 
         body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Projet Professionnel - AfricanWITS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #8A2BE2;
+            --secondary: #4B0082;
+            --accent: #9370DB;
+            --light: #F5F5F5;
+            --dark: #333;
+            --success: #28a745;
+            --warning: #ffc107;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background-attachment: fixed;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        
+        .hero {
+            display: flex;
+            align-items: center;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+        
+        .profile-container {
+            position: relative;
+            margin-right: 30px;
+        }
+        
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .upload-btn {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        
+        .hero-content {
+            flex: 1;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .name {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: inline-block;
+        }
+        
+        .section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        h2 i {
+            margin-right: 10px;
+        }
+        
+        .advisors {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .advisor-card {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid var(--primary);
+            transition: transform 0.3s ease;
+        }
+        
+        .advisor-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .career-path {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .path-item {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        
+        .path-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .path-item.completed {
+            border-left: 4px solid var(--success);
+        }
+        
+        .path-item.current {
+            border-left: 4px solid var(--warning);
+        }
+        
+        .path-item.future {
+            border-left: 4px solid var(--primary);
+        }
+        
+        .jobs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .job-card {
+            background: var(--light);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .job-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .job-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .cert-card {
+            background: var(--light);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--success);
+            display: flex;
+            align-items: center;
+        }
+        
+        .cert-card i {
+            margin-right: 10px;
+            color: var(--success);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--accent);
+        }
+        
+        .timeline-item {
+            background: var(--light);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+            position: relative;
+            margin-left: 60px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -42px;
+            top: 25px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 4px solid white;
+        }
+        
+        .year {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .year i {
+            margin-right: 8px;
+        }
+        
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .impact-card {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .impact-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .impact-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .deadline {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .motivation {
+            background: var(--light);
+            padding: 25px;
+            border-radius: 10px;
+            line-height: 1.8;
+            font-style: italic;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .skills-list {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .skill-item {
+            margin-bottom: 15px;
+        }
+        
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .skill-bar {
+            height: 10px;
+            background: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .skill-level {
+            height: 100%;
+            background: var(--primary);
+            border-radius: 5px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-container {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                margin-left: 40px;
+            }
+            
+            .timeline-item::before {
+                left: -32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- En-tête -->
+        <header>
+            <div class="hero">
+                <div class="profile-container">
+                    <img id="profile-pic" src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Photo de profil" class="profile-img">
+                    <button class="upload-btn" onclick="document.getElementById('file-input').click()">
+                        <i class="fas fa-camera"></i>
+                    </button>
+                    <input type="file" id="file-input" accept="image/*" style="display: none;" onchange="previewImage(event)">
+                </div>
+                <div class="hero-content">
+                    <div class="name">VOTRE NOM ICI</div>
+                    <h1>PROJET PROFESSIONNEL</h1>
+                    <div class="tagline">Double Compétence : Génie Logiciel & Data Science</div>
+                    <p><em>"Du code à la donnée, construire l'avenir bancaire de demain"</em></p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Encadreurs -->
+        <section class="section">
+            <h2><i class="fas fa-users"></i> ENCADREURS</h2>
+            <div class="advisors">
+                <div class="advisor-card">
+                    <h3>Tankui Frank</h3>
+                    <p>Mentor Principal</p>
+                </div>
+                <div class="advisor-card">
+                    <h3>M. Jacques Agbegbo</h3>
+                    <p>Encadreur Académique</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Motivations -->
+        <section class="section">
+            <h2><i class="fas fa-bullseye"></i> MES MOTIVATIONS</h2>
+            <div class="motivation">
+                <p>Mon choix de me spécialiser en génie logiciel et data science dans le secteur bancaire est motivé par la convergence de mes passions pour la technologie et la finance. Je souhaite contribuer à la transformation numérique des institutions financières en Afrique, en développant des solutions innovantes qui améliorent l'expérience client et optimisent les processus bancaires.</p>
+                <p>La data science me permettra d'extraire des insights précieux des données financières pour une prise de décision éclairée, tandis que le génie logiciel me donnera les outils pour concevoir des systèmes robustes et sécurisés.</p>
+            </div>
+        </section>
+
+        <!-- Parcours Académique -->
+        <section class="section">
+            <h2><i class="fas fa-graduation-cap"></i> PARCOURS ACADÉMIQUE</h2>
+            <div class="career-path">
+                <div class="path-item completed">
+                    <h3>Licence en Génie Logiciel</h3>
+                    <p>Acquis - Fondations solides en développement logiciel</p>
+                </div>
+                <div class="path-item current">
+                    <h3>Master en Génie Logiciel</h3>
+                    <p>En cours - Spécialisation architectures logicielles</p>
+                </div>
+                <div class="path-item future">
+                    <h3>Double Master en Data Science</h3>
+                    <p>En projet - Analyse de données et machine learning</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Compétences -->
+        <section class="section">
+            <h2><i class="fas fa-tools"></i> MES COMPÉTENCES</h2>
+            <div class="skills-container">
+                <div class="skills-list">
+                    <h3>Compétences actuelles</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Développement Web</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Bases de données</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Java/Python</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-list">
+                    <h3>Compétences à acquérir</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Machine Learning</span>
+                            <span>20%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 20%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Big Data Technologies</span>
+                            <span>10%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 10%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Cloud Computing</span>
+                            <span>30%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 30%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Métiers Visés -->
+        <section class="section">
+            <h2><i class="fas fa-briefcase"></i> MÉTIERS VISÉS</h2>
+            <div class="jobs-grid">
+                <div class="job-card">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Ingénieure Logiciel" class="job-image">
+                    <h3>Ingénieure Logiciel</h3>
+                    <p><strong>Secteur Bancaire</strong></p>
+                    <p>Développement d'applications sécurisées<br>Optimisation des systèmes de transaction<br>Architecture des solutions financières</p>
+                </div>
+                <div class="job-card">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Data Scientist" class="job-image">
+                    <h3>Data Scientist</h3>
+                    <p><strong>Environnement Bancaire</strong></p>
+                    <p>Analyse des risques<br>Détection de fraudes<br>Stratégie de crédit et scoring</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications -->
+        <section class="section">
+            <h2><i class="fas fa-certificate"></i> CERTIFICATIONS DATA</h2>
+            <div class="certifications">
+                <div class="cert-card"><i class="fab fa-microsoft"></i> Microsoft Certified: Azure Data Scientist Associate</div>
+                <div class="cert-card"><i class="fab fa-google"></i> Google Professional Data Engineer</div>
+                <div class="cert-card"><i class="fas fa-chart-bar"></i> SAS Certified Data Scientist</div>
+                <div class="cert-card"><i class="fab fa-aws"></i> AWS Certified Data Analytics</div>
+                <div class="cert-card"><i class="fas fa-university"></i> CFA Institute – Data Science for Investment Professionals</div>
+            </div>
+        </section>
+
+        <!-- Plan d'Action -->
+        <section class="section">
+            <h2><i class="fas fa-road"></i> PLAN D'ACTION</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="year"><i class="fas fa-calendar-alt"></i> À 1 an (Octobre 2026)</div>
+                    <ul>
+                        <li>Finaliser le Master Génie Logiciel</li>
+                        <li>Commencer le Double Master Data Science</li>
+                        <li>Obtenir la certification Azure Data Scientist</li>
+                        <li>Stage en développement d'applications bancaires</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="year"><i class="fas fa-calendar-alt"></i> À 3 ans (Octobre 2028)</div>
+                    <ul>
+                        <li>Double diplôme obtenu</li>
+                        <li>2 certifications data validées</li>
+                        <li>Premier poste en banque en tant que Data Scientist</li>
+                        <li>Contribuer à des projets open source dans la fintech</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact -->
+        <section class="section">
+            <h2><i class="fas fa-globe-africa"></i> IMPACT VISÉ</h2>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-icon"><i class="fas fa-user"></i></div>
+                    <h3>Personnel</h3>
+                    <p>Expertise technique solide en génie logiciel et data science</p>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-icon"><i class="fas fa-users"></i></div>
+                    <h3>Communautaire</h3>
+                    <p>Mentorat des jeunes filles dans les STEM et promotion de la tech féminine</p>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Sociétal</h3>
+                    <p>Contribuer à l'innovation et l'inclusion financière en Afrique</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Délais -->
+        <section class="deadline">
+            <h2><i class="fas fa-clock"></i> CALENDRIER AFRICANWITS</h2>
+            <p><strong>Soumission :</strong> 22 Octobre 2025</p>
+            <p><strong>Présentation :</strong> 25 Octobre 2025</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>Programme AfricanWITS Girls in ICT 2025</p>
+    </footer>
+
+    <script>
+        // Fonction pour prévisualiser l'image de profil
+        function previewImage(event) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                const output = document.getElementById('profile-pic');
+                output.src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+        
+        // Animation au défilement
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Appliquer l'animation aux sections
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+        
+        // Remplacer "VOTRE NOM ICI" par ton nom réel
+        document.addEventListener('DOMContentLoaded', function() {
+            // Remplace cette valeur par ton nom
+            const userName = "Ton Nom Complet";
+            document.querySelector('.name').textContent = userName;
+        });
+    </script>
+</body>
+</html>
             line-height: 1.6;
             color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
