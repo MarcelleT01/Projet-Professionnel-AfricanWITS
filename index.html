@@ -8,18 +8,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #7c3aed;
-            --accent: #06d6a0;
-            --dark: #0f172a;
-            --light: #f8fafc;
-            --text: #334155;
-            --text-light: #64748b;
-            --white: #ffffff;
+            --primary: #8B5FBF;
+            --primary-dark: #6D3FAF;
+            --secondary: #FF6B6B;
+            --accent: #4ECDC4;
+            --dark: #2D3047;
+            --light: #F7F9FC;
+            --text: #4A5568;
+            --text-light: #718096;
+            --white: #FFFFFF;
             --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-            --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
         }
 
         * {
@@ -30,9 +30,9 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            line-height: 1.6;
+            line-height: 1.7;
             color: var(--text);
-            background: var(--white);
+            background: var(--light);
             max-width: 1200px;
             margin: 0 auto;
             padding: 0;
@@ -44,72 +44,79 @@
         }
 
         .page {
-            padding: 60px 40px;
+            padding: 70px 50px;
             position: relative;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            border-bottom: 1px solid #e2e8f0;
+            background: var(--white);
+            margin-bottom: 20px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
         }
 
         .page:last-child {
-            border-bottom: none;
+            margin-bottom: 0;
         }
 
         .page-header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         h1, h2, h3, h4 {
             font-weight: 700;
             color: var(--dark);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             line-height: 1.1;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
         }
 
         h2 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             position: relative;
             display: inline-block;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
+            font-family: 'Playfair Display', serif;
         }
 
         h2:after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -15px;
             left: 0;
-            width: 60px;
-            height: 4px;
+            width: 80px;
+            height: 5px;
             background: var(--accent);
-            border-radius: 2px;
+            border-radius: 3px;
         }
 
         h3 {
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             color: var(--primary);
+            margin-bottom: 20px;
         }
 
         h4 {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--secondary);
+            margin-bottom: 15px;
         }
 
         .hero {
             display: flex;
             align-items: center;
-            gap: 60px;
-            margin-bottom: 50px;
+            gap: 70px;
+            margin-bottom: 60px;
         }
 
         .profile-container {
@@ -118,30 +125,30 @@
         }
 
         .profile-image {
-            width: 220px;
-            height: 220px;
+            width: 240px;
+            height: 240px;
             border-radius: 50%;
             object-fit: cover;
-            border: 6px solid var(--white);
+            border: 8px solid var(--white);
             box-shadow: var(--shadow);
         }
 
         .change-photo-btn {
             position: absolute;
-            bottom: 15px;
-            right: 15px;
+            bottom: 20px;
+            right: 20px;
             background: var(--accent);
             color: var(--white);
             border: none;
             border-radius: 50%;
-            width: 45px;
-            height: 45px;
+            width: 50px;
+            height: 50px;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
         }
 
@@ -155,83 +162,99 @@
         }
 
         .name {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             font-weight: 800;
             color: var(--dark);
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
         }
 
         .tagline {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             color: var(--primary);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             font-weight: 500;
         }
 
         .slogan {
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             font-style: italic;
             color: var(--text-light);
-            padding: 20px;
-            background: rgba(37, 99, 235, 0.05);
-            border-radius: 12px;
-            border-left: 4px solid var(--accent);
-            margin-bottom: 30px;
+            padding: 25px;
+            background: rgba(139, 95, 191, 0.08);
+            border-radius: 15px;
+            border-left: 5px solid var(--accent);
+            margin-bottom: 40px;
+            line-height: 1.6;
         }
 
         .content-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            margin: 50px 0;
         }
 
         .card {
             background: var(--white);
-            padding: 30px;
-            border-radius: 16px;
+            padding: 35px;
+            border-radius: 20px;
             box-shadow: var(--card-shadow);
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             border: 1px solid #f1f5f9;
             height: 100%;
             display: flex;
             flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
         }
 
         .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
         .card-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 2.8rem;
+            margin-bottom: 25px;
             color: var(--primary);
         }
 
         .card h3 {
-            margin-bottom: 15px;
-        }
-
-        .card p {
-            margin-bottom: 15px;
-            color: var(--text);
-        }
-
-        .card ul {
-            padding-left: 20px;
             margin-bottom: 20px;
         }
 
-        .card li {
-            margin-bottom: 8px;
+        .card p {
+            margin-bottom: 20px;
             color: var(--text);
+            line-height: 1.7;
+        }
+
+        .card ul {
+            padding-left: 25px;
+            margin-bottom: 25px;
+        }
+
+        .card li {
+            margin-bottom: 10px;
+            color: var(--text);
+            line-height: 1.6;
         }
 
         .image-container {
             width: 100%;
-            height: 180px;
-            border-radius: 12px;
+            height: 200px;
+            border-radius: 15px;
             overflow: hidden;
             margin-top: auto;
             background: var(--gradient);
@@ -240,7 +263,7 @@
             justify-content: center;
             color: white;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             position: relative;
         }
 
@@ -256,35 +279,36 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.4);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-weight: 600;
-            font-size: 1.2rem;
+            font-weight: 700;
+            font-size: 1.4rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .timeline {
             position: relative;
-            max-width: 800px;
-            margin: 40px auto;
+            max-width: 900px;
+            margin: 50px auto;
         }
 
         .timeline:before {
             content: '';
             position: absolute;
-            left: 30px;
+            left: 40px;
             top: 0;
             bottom: 0;
-            width: 4px;
+            width: 5px;
             background: var(--primary);
-            border-radius: 2px;
+            border-radius: 3px;
         }
 
         .timeline-item {
-            margin-bottom: 40px;
-            padding-left: 80px;
+            margin-bottom: 50px;
+            padding-left: 100px;
             position: relative;
         }
 
@@ -296,8 +320,8 @@
             position: absolute;
             left: 0;
             top: 0;
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 80px;
             background: var(--primary);
             color: white;
             border-radius: 50%;
@@ -305,126 +329,147 @@
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             box-shadow: var(--shadow);
+            border: 5px solid var(--white);
         }
 
         .timeline-content {
             background: var(--white);
-            padding: 25px;
-            border-radius: 12px;
+            padding: 30px;
+            border-radius: 15px;
             box-shadow: var(--card-shadow);
-            border-left: 4px solid var(--accent);
+            border-left: 5px solid var(--accent);
+        }
+
+        .timeline-content h3 {
+            margin-bottom: 15px;
         }
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin: 30px 0;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
         }
 
         .skill-item {
             background: var(--white);
-            padding: 15px;
-            border-radius: 10px;
+            padding: 20px;
+            border-radius: 12px;
             text-align: center;
             border: 1px solid #e2e8f0;
-            font-weight: 500;
-            transition: all 0.2s ease;
+            font-weight: 600;
+            transition: all 0.3s ease;
             box-shadow: var(--card-shadow);
+            font-size: 1.1rem;
         }
 
         .skill-item:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
             border-color: var(--primary);
+            background: var(--primary);
+            color: white;
         }
 
         .certifications-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin: 40px 0;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
         }
 
         .cert-card {
             background: var(--white);
-            padding: 25px;
-            border-radius: 12px;
+            padding: 30px;
+            border-radius: 15px;
             box-shadow: var(--card-shadow);
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 25px;
             transition: all 0.3s ease;
             border: 1px solid #f1f5f9;
         }
 
         .cert-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12);
         }
 
         .cert-logo {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             background: var(--gradient);
-            border-radius: 12px;
+            border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             flex-shrink: 0;
         }
 
         .cert-info h4 {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .cert-info p {
             color: var(--text-light);
-            font-size: 0.9rem;
+            font-size: 1rem;
+            line-height: 1.6;
         }
 
         .impact-section {
             background: linear-gradient(135deg, #f0f9ff 0%, #f0fdf4 100%);
-            padding: 50px 40px;
-            border-radius: 20px;
-            margin: 50px 0;
+            padding: 60px 50px;
+            border-radius: 25px;
+            margin: 60px 0;
             border: 1px solid #e2e8f0;
         }
 
         .impact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
         }
 
         .impact-card {
             background: var(--white);
-            padding: 30px;
-            border-radius: 16px;
+            padding: 35px;
+            border-radius: 20px;
             text-align: center;
             box-shadow: var(--card-shadow);
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .impact-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
         }
 
         .impact-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transform: translateY(-10px);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.15);
         }
 
         .impact-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
+            font-size: 3.5rem;
+            margin-bottom: 25px;
             color: var(--primary);
         }
 
         .footer {
             text-align: center;
-            margin-top: 60px;
-            padding-top: 30px;
+            margin-top: 70px;
+            padding-top: 40px;
             border-top: 1px solid #e2e8f0;
             color: var(--text-light);
         }
@@ -432,73 +477,89 @@
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            margin-top: 20px;
+            gap: 40px;
+            margin-top: 25px;
             flex-wrap: wrap;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             color: var(--text);
+            font-weight: 500;
         }
 
         .advisor-section {
             display: flex;
-            gap: 30px;
-            margin: 30px 0;
+            gap: 35px;
+            margin: 40px 0;
             flex-wrap: wrap;
         }
 
         .advisor-card {
             background: var(--white);
-            padding: 25px;
-            border-radius: 12px;
+            padding: 30px;
+            border-radius: 15px;
             box-shadow: var(--card-shadow);
             flex: 1;
-            min-width: 250px;
+            min-width: 280px;
             text-align: center;
-            border-top: 4px solid var(--primary);
+            border-top: 5px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .advisor-card:hover {
+            transform: translateY(-5px);
         }
 
         .advisor-name {
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--dark);
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
 
         .advisor-role {
             color: var(--text-light);
-            font-size: 0.9rem;
+            font-size: 1rem;
+        }
+
+        .deadline-notice {
+            background: var(--gradient);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 40px 0;
+            box-shadow: var(--shadow);
         }
 
         /* Responsive Design */
-        @media (max-width: 968px) {
+        @media (max-width: 1100px) {
             .hero {
                 flex-direction: column;
                 text-align: center;
-                gap: 30px;
+                gap: 40px;
             }
             
             .profile-image {
-                width: 180px;
-                height: 180px;
+                width: 200px;
+                height: 200px;
             }
             
             h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
             
             h2 {
-                font-size: 1.8rem;
+                font-size: 2.2rem;
             }
         }
 
         @media (max-width: 768px) {
             .page {
-                padding: 40px 20px;
+                padding: 50px 30px;
             }
             
             .content-grid {
@@ -506,42 +567,46 @@
             }
             
             .timeline:before {
-                left: 20px;
+                left: 25px;
             }
             
             .timeline-item {
-                padding-left: 60px;
+                padding-left: 70px;
             }
             
             .timeline-year {
-                width: 50px;
-                height: 50px;
-                font-size: 1rem;
+                width: 60px;
+                height: 60px;
+                font-size: 1.1rem;
             }
         }
 
         @media (max-width: 480px) {
             h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
             h2 {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
             }
             
             .profile-image {
-                width: 150px;
-                height: 150px;
+                width: 170px;
+                height: 170px;
             }
             
             .card {
-                padding: 20px;
+                padding: 25px;
+            }
+            
+            .page {
+                padding: 40px 20px;
             }
         }
 
         /* Animation subtile */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
+            from { opacity: 0; transform: translateY(40px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -563,13 +628,13 @@
                 </div>
                 <div class="hero-content">
                     <div class="name">Marcelle Larissa Tankui Tchouamouo</div>
-                    <div class="tagline">Future Architecte Logicielle & Data Scientist</div>
+                    <div class="tagline">Architecte Logicielle & Data Scientist en devenir</div>
                     <div class="slogan">
-                        "Concevoir l'avenir financier de l'Afrique grâce à l'innovation technologique"
+                        "Concevoir l'avenir financier de l'Afrique grâce à l'innovation technologique et l'intelligence des données"
                     </div>
                     <div class="advisor-section">
                         <div class="advisor-card">
-                            <div class="advisor-name">Tankui Frank</div>
+                            <div class="advisor-name">M. Tankui Frank</div>
                             <div class="advisor-role">Mentor Principal</div>
                         </div>
                         <div class="advisor-card">
@@ -580,7 +645,10 @@
                 </div>
             </div>
 
-            <h2>Mon Projet Professionnel</h2>
+            <div class="page-header">
+                <h2>Mon Projet Professionnel</h2>
+                <p>Une vision ambitieuse pour une carrière d'excellence dans la FinTech africaine</p>
+            </div>
             
             <div class="content-grid">
                 <div class="card">
@@ -588,7 +656,7 @@
                         <i class="fas fa-laptop-code"></i>
                     </div>
                     <h3>Génie Logiciel</h3>
-                    <p>Spécialisation en architecture des systèmes financiers et développement d'applications bancaires sécurisées.</p>
+                    <p>Spécialisation en architecture des systèmes financiers et développement d'applications bancaires sécurisées pour le marché africain.</p>
                     <div class="image-container">
                         <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Génie Logiciel">
                         <div class="image-overlay">Génie Logiciel</div>
@@ -599,21 +667,10 @@
                         <i class="fas fa-chart-bar"></i>
                     </div>
                     <h3>Data Science</h3>
-                    <p>Expertise en analyse de données financières, machine learning et intelligence artificielle appliquée à la banque.</p>
+                    <p>Expertise en analyse de données financières, machine learning et intelligence artificielle appliquée à la banque et à la gestion des risques.</p>
                     <div class="image-container">
                         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Data Science">
                         <div class="image-overlay">Data Science</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Développement Communautaire</h3>
-                    <p>Mentorat des jeunes femmes dans la tech et contribution à l'écosystème FinTech africain.</p>
-                    <div class="image-container">
-                        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Développement Communautaire">
-                        <div class="image-overlay">Développement Communautaire</div>
                     </div>
                 </div>
             </div>
@@ -628,33 +685,25 @@
 
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-year">2024</div>
+                    <div class="timeline-year">2025</div>
                     <div class="timeline-content">
                         <h3>Licence en Génie Logiciel</h3>
-                        <p>Obtention de ma licence avec une spécialisation en développement d'applications et architecture logicielle.</p>
+                        <p>Obtention de ma licence avec une spécialisation en développement d'applications et architecture logicielle. Formation solide en algorithmique, bases de données et développement web.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-year">2025</div>
+                    <div class="timeline-year">2025-2027</div>
                     <div class="timeline-content">
                         <h3>Master en Génie Logiciel</h3>
-                        <p>Début de mon master à l'IUT de Douala, spécialisation Architecture des Systèmes d'Information.</p>
+                        <p>Début de mon master à l'IUT de Douala, spécialisation Architecture des Systèmes d'Information. Cours avancés en conception de systèmes distribués, sécurité informatique et gestion de projet.</p>
                         <p><strong>En parallèle:</strong> Début de carrière dans une FinTech en tant que développeuse full-stack.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-year">2026</div>
+                    <div class="timeline-year">2027-2029</div>
                     <div class="timeline-content">
                         <h3>Double Master en Data Science</h3>
-                        <p>Début de mon double master en Data Science à l'étranger, en partenariat avec l'IUC.</p>
-                        <p>Spécialisation en Machine Learning appliqué à la finance et analyse des risques.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2027</div>
-                    <div class="timeline-content">
-                        <h3>Obtention des Diplômes</h3>
-                        <p>Finalisation de mes deux masters et préparation pour des postes à responsabilité dans le secteur FinTech.</p>
+                        <p>Début de mon double master en Data Science à l'étranger, en partenariat avec l'IUC. Spécialisation en Machine Learning appliqué à la finance, analyse des risques et intelligence artificielle.</p>
                     </div>
                 </div>
             </div>
@@ -725,7 +774,7 @@
                     </div>
                     <div class="cert-info">
                         <h4>AWS Certified Solutions Architect</h4>
-                        <p>Architecture cloud pour applications financières scalables et sécurisées</p>
+                        <p>Architecture cloud pour applications financières scalables et sécurisées. Certification essentielle pour le déploiement d'applications dans le cloud.</p>
                     </div>
                 </div>
                 <div class="cert-card">
@@ -734,7 +783,7 @@
                     </div>
                     <div class="cert-info">
                         <h4>Certified Ethical Hacker</h4>
-                        <p>Sécurité des applications et systèmes financiers</p>
+                        <p>Sécurité des applications et systèmes financiers. Compétences en cybersécurité pour protéger les données sensibles des institutions financières.</p>
                     </div>
                 </div>
                 <div class="cert-card">
@@ -742,8 +791,8 @@
                         <i class="fab fa-google"></i>
                     </div>
                     <div class="cert-info">
-                        <h4>Google Data Engineer</h4>
-                        <p>Gestion de données financières à grande échelle</p>
+                        <h4>Google Professional Data Engineer</h4>
+                        <p>Gestion de données financières à grande échelle. Conception de pipelines de données et mise en place de solutions Big Data.</p>
                     </div>
                 </div>
                 <div class="cert-card">
@@ -752,7 +801,7 @@
                     </div>
                     <div class="cert-info">
                         <h4>Microsoft Azure Data Scientist</h4>
-                        <p>Machine Learning et analytics pour la finance</p>
+                        <p>Machine Learning et analytics pour la finance. Développement de modèles prédictifs et solutions d'IA pour le secteur bancaire.</p>
                     </div>
                 </div>
             </div>
@@ -773,33 +822,36 @@
                     <h3>Nov 2025 - Présent</h3>
                     <h4>Développeuse Full-Stack - Startup FinTech</h4>
                     <ul>
-                        <li>Développement d'applications de paiement mobile</li>
-                        <li>Conception d'APIs bancaires sécurisées</li>
-                        <li>Intégration de systèmes de traitement de transactions</li>
+                        <li>Développement d'applications de paiement mobile sécurisées</li>
+                        <li>Conception d'APIs bancaires et intégration de systèmes de paiement</li>
+                        <li>Collaboration avec l'équipe produit pour définir les spécifications techniques</li>
+                        <li>Mise en place de pratiques DevOps et d'intégration continue</li>
                     </ul>
                 </div>
                 <div class="card">
                     <div class="card-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3>2026-2027</h3>
+                    <h3>2027-2028</h3>
                     <h4>Software Architect - Institution Bancaire</h4>
                     <ul>
-                        <li>Architecture de systèmes financiers complexes</li>
-                        <li>Migration vers le cloud et transformation digitale</li>
-                        <li>Encadrement d'équipes de développement</li>
+                        <li>Architecture de systèmes financiers complexes et scalables</li>
+                        <li>Migration vers le cloud et modernisation des infrastructures</li>
+                        <li>Encadrement d'équipes de développement et revue de code</li>
+                        <li>Définition des standards techniques et des bonnes pratiques</li>
                     </ul>
                 </div>
                 <div class="card">
                     <div class="card-icon">
                         <i class="fas fa-crown"></i>
                     </div>
-                    <h3>2027-2028</h3>
+                    <h3>2029-2030</h3>
                     <h4>Head of Technology - Scale-up FinTech</h4>
                     <ul>
-                        <li>Direction de la stratégie technologique</li>
-                        <li>Management d'équipes pluridisciplinaires</li>
-                        <li>Innovation produits et expansion marché</li>
+                        <li>Direction de la stratégie technologique et de l'innovation</li>
+                        <li>Management d'équipes pluridisciplinaires et développement des talents</li>
+                        <li>Supervision de l'architecture technique et de la roadmap produit</li>
+                        <li>Représentation technique auprès des investisseurs et partenaires</li>
                     </ul>
                 </div>
             </div>
@@ -813,29 +865,36 @@
             </div>
 
             <div class="impact-section">
+                <h3>Impact Multi-dimensionnel</h3>
                 <div class="impact-grid">
                     <div class="impact-card">
                         <div class="impact-icon">
                             <i class="fas fa-user-graduate"></i>
                         </div>
                         <h3>Impact Personnel</h3>
-                        <p>Devenir une référence dans l'architecture logicielle et la data science en Afrique</p>
+                        <p>Devenir une référence dans l'architecture logicielle et la data science en Afrique, avec une expertise reconnue internationalement.</p>
                     </div>
                     <div class="impact-card">
                         <div class="impact-icon">
                             <i class="fas fa-users"></i>
                         </div>
                         <h3>Impact Communautaire</h3>
-                        <p>Mentorat de 100+ jeunes femmes dans la tech d'ici 2028</p>
+                        <p>Mentorat de 100+ jeunes femmes dans la tech d'ici 2028 et création d'une communauté dédiée à l'empowerment féminin dans la technologie.</p>
                     </div>
                     <div class="impact-card">
                         <div class="impact-icon">
                             <i class="fas fa-globe-africa"></i>
                         </div>
                         <h3>Impact Sociétal</h3>
-                        <p>Contribuer à l'inclusion financière et la transformation digitale en Afrique</p>
+                        <p>Contribuer à l'inclusion financière et la transformation digitale en Afrique grâce à des solutions technologiques innovantes et accessibles.</p>
                     </div>
                 </div>
+            </div>
+
+            <div class="deadline-notice">
+                <h3>Dates importantes AfricanWITS</h3>
+                <p><strong>Soumission du portfolio :</strong> 22 Octobre 2025</p>
+                <p><strong>Présentation du pitch :</strong> 25 Octobre 2025</p>
             </div>
 
             <div class="footer">
