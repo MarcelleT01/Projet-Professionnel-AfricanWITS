@@ -8,18 +8,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #8B5FBF;
-            --primary-dark: #6D3FAF;
-            --secondary: #FF6B6B;
-            --accent: #4ECDC4;
-            --dark: #2D3047;
-            --light: #F7F9FC;
-            --text: #4A5568;
+            --primary: #1a365d;
+            --primary-dark: #2d3748;
+            --secondary: #2b6cb0;
+            --accent: #3182ce;
+            --dark: #1a202c;
+            --light: #f7fafc;
+            --text: #2d3748;
             --text-light: #718096;
-            --white: #FFFFFF;
+            --white: #ffffff;
             --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
         }
 
         * {
@@ -32,10 +32,10 @@
             font-family: 'Inter', sans-serif;
             line-height: 1.7;
             color: var(--text);
-            background: var(--light);
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0;
+            padding: 20px;
             overflow-x: hidden;
         }
 
@@ -44,15 +44,15 @@
         }
 
         .page {
-            padding: 70px 50px;
+            padding: 60px 40px;
             position: relative;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             background: var(--white);
-            margin-bottom: 20px;
-            border-radius: 20px;
+            margin-bottom: 25px;
+            border-radius: 16px;
             box-shadow: var(--shadow);
         }
 
@@ -62,61 +62,61 @@
 
         .page-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
 
         h1, h2, h3, h4 {
             font-weight: 700;
             color: var(--dark);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         h1 {
-            font-size: 3.2rem;
+            font-size: 3rem;
             background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             line-height: 1.1;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-family: 'Playfair Display', serif;
         }
 
         h2 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             position: relative;
             display: inline-block;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             font-family: 'Playfair Display', serif;
         }
 
         h2:after {
             content: '';
             position: absolute;
-            bottom: -15px;
+            bottom: -12px;
             left: 0;
-            width: 80px;
-            height: 5px;
+            width: 70px;
+            height: 4px;
             background: var(--accent);
-            border-radius: 3px;
+            border-radius: 2px;
         }
 
         h3 {
-            font-size: 1.7rem;
+            font-size: 1.5rem;
             color: var(--primary);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         h4 {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: var(--secondary);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .hero {
             display: flex;
             align-items: center;
-            gap: 70px;
-            margin-bottom: 60px;
+            gap: 50px;
+            margin-bottom: 50px;
         }
 
         .profile-container {
@@ -125,30 +125,30 @@
         }
 
         .profile-image {
-            width: 240px;
-            height: 240px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             object-fit: cover;
-            border: 8px solid var(--white);
+            border: 6px solid var(--white);
             box-shadow: var(--shadow);
         }
 
         .change-photo-btn {
             position: absolute;
-            bottom: 20px;
-            right: 20px;
+            bottom: 15px;
+            right: 15px;
             background: var(--accent);
             color: var(--white);
             border: none;
             border-radius: 50%;
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
             transition: all 0.3s ease;
         }
 
@@ -162,46 +162,46 @@
         }
 
         .name {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 800;
             color: var(--dark);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             font-family: 'Playfair Display', serif;
         }
 
         .tagline {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             color: var(--primary);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             font-weight: 500;
         }
 
         .slogan {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             font-style: italic;
             color: var(--text-light);
-            padding: 25px;
-            background: rgba(139, 95, 191, 0.08);
-            border-radius: 15px;
-            border-left: 5px solid var(--accent);
-            margin-bottom: 40px;
+            padding: 20px;
+            background: rgba(26, 54, 93, 0.05);
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+            margin-bottom: 30px;
             line-height: 1.6;
         }
 
         .content-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 35px;
-            margin: 50px 0;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 35px 0;
         }
 
         .card {
             background: var(--white);
-            padding: 35px;
-            border-radius: 20px;
+            padding: 30px;
+            border-radius: 14px;
             box-shadow: var(--card-shadow);
-            transition: all 0.4s ease;
-            border: 1px solid #f1f5f9;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -215,46 +215,46 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 5px;
+            height: 4px;
             background: var(--gradient);
         }
 
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
         }
 
         .card-icon {
-            font-size: 2.8rem;
-            margin-bottom: 25px;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
             color: var(--primary);
         }
 
         .card h3 {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .card p {
-            margin-bottom: 20px;
-            color: var(--text);
-            line-height: 1.7;
-        }
-
-        .card ul {
-            padding-left: 25px;
-            margin-bottom: 25px;
-        }
-
-        .card li {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             color: var(--text);
             line-height: 1.6;
         }
 
+        .card ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card li {
+            margin-bottom: 8px;
+            color: var(--text);
+            line-height: 1.5;
+        }
+
         .image-container {
             width: 100%;
-            height: 200px;
-            border-radius: 15px;
+            height: 180px;
+            border-radius: 10px;
             overflow: hidden;
             margin-top: auto;
             background: var(--gradient);
@@ -263,7 +263,7 @@
             justify-content: center;
             color: white;
             font-weight: 600;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             position: relative;
         }
 
@@ -279,36 +279,36 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.3);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-weight: 700;
-            font-size: 1.4rem;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 600;
+            font-size: 1.2rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
         }
 
         .timeline {
             position: relative;
-            max-width: 900px;
-            margin: 50px auto;
+            max-width: 850px;
+            margin: 40px auto;
         }
 
         .timeline:before {
             content: '';
             position: absolute;
-            left: 40px;
+            left: 30px;
             top: 0;
             bottom: 0;
-            width: 5px;
+            width: 4px;
             background: var(--primary);
-            border-radius: 3px;
+            border-radius: 2px;
         }
 
         .timeline-item {
-            margin-bottom: 50px;
-            padding-left: 100px;
+            margin-bottom: 40px;
+            padding-left: 80px;
             position: relative;
         }
 
@@ -320,8 +320,8 @@
             position: absolute;
             left: 0;
             top: 0;
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             background: var(--primary);
             color: white;
             border-radius: 50%;
@@ -329,44 +329,44 @@
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             box-shadow: var(--shadow);
-            border: 5px solid var(--white);
+            border: 4px solid var(--white);
         }
 
         .timeline-content {
             background: var(--white);
-            padding: 30px;
-            border-radius: 15px;
+            padding: 25px;
+            border-radius: 12px;
             box-shadow: var(--card-shadow);
-            border-left: 5px solid var(--accent);
+            border-left: 4px solid var(--accent);
         }
 
         .timeline-content h3 {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            margin: 40px 0;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
         }
 
         .skill-item {
             background: var(--white);
-            padding: 20px;
-            border-radius: 12px;
+            padding: 16px;
+            border-radius: 10px;
             text-align: center;
             border: 1px solid #e2e8f0;
             font-weight: 600;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             box-shadow: var(--card-shadow);
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         .skill-item:hover {
-            transform: translateY(-8px);
+            transform: translateY(-5px);
             border-color: var(--primary);
             background: var(--primary);
             color: white;
@@ -374,73 +374,73 @@
 
         .certifications-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 50px 0;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
         }
 
         .cert-card {
             background: var(--white);
-            padding: 30px;
-            border-radius: 15px;
+            padding: 25px;
+            border-radius: 12px;
             box-shadow: var(--card-shadow);
             display: flex;
             align-items: center;
-            gap: 25px;
+            gap: 20px;
             transition: all 0.3s ease;
-            border: 1px solid #f1f5f9;
+            border: 1px solid #e2e8f0;
         }
 
         .cert-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
         }
 
         .cert-logo {
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             background: var(--gradient);
-            border-radius: 15px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             flex-shrink: 0;
         }
 
         .cert-info h4 {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .cert-info p {
             color: var(--text-light);
-            font-size: 1rem;
-            line-height: 1.6;
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
 
         .impact-section {
-            background: linear-gradient(135deg, #f0f9ff 0%, #f0fdf4 100%);
-            padding: 60px 50px;
-            border-radius: 25px;
-            margin: 60px 0;
-            border: 1px solid #e2e8f0;
+            background: linear-gradient(135deg, #edf2f7 0%, #e2e8f0 100%);
+            padding: 50px 40px;
+            border-radius: 16px;
+            margin: 50px 0;
+            border: 1px solid #cbd5e0;
         }
 
         .impact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 35px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
         }
 
         .impact-card {
             background: var(--white);
-            padding: 35px;
-            border-radius: 20px;
+            padding: 30px;
+            border-radius: 14px;
             text-align: center;
             box-shadow: var(--card-shadow);
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
@@ -451,25 +451,25 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 5px;
+            height: 4px;
             background: var(--gradient);
         }
 
         .impact-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
         }
 
         .impact-icon {
-            font-size: 3.5rem;
-            margin-bottom: 25px;
+            font-size: 3rem;
+            margin-bottom: 20px;
             color: var(--primary);
         }
 
         .footer {
             text-align: center;
-            margin-top: 70px;
-            padding-top: 40px;
+            margin-top: 60px;
+            padding-top: 30px;
             border-top: 1px solid #e2e8f0;
             color: var(--text-light);
         }
@@ -477,35 +477,35 @@
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 40px;
-            margin-top: 25px;
+            gap: 30px;
+            margin-top: 20px;
             flex-wrap: wrap;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             color: var(--text);
             font-weight: 500;
         }
 
         .advisor-section {
             display: flex;
-            gap: 35px;
-            margin: 40px 0;
+            gap: 25px;
+            margin: 30px 0;
             flex-wrap: wrap;
         }
 
         .advisor-card {
             background: var(--white);
-            padding: 30px;
-            border-radius: 15px;
+            padding: 25px;
+            border-radius: 12px;
             box-shadow: var(--card-shadow);
             flex: 1;
-            min-width: 280px;
+            min-width: 250px;
             text-align: center;
-            border-top: 5px solid var(--primary);
+            border-top: 4px solid var(--primary);
             transition: all 0.3s ease;
         }
 
@@ -515,51 +515,41 @@
 
         .advisor-name {
             font-weight: 700;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: var(--dark);
-            margin-bottom: 8px;
+            margin-bottom: 5px;
         }
 
         .advisor-role {
             color: var(--text-light);
-            font-size: 1rem;
-        }
-
-        .deadline-notice {
-            background: var(--gradient);
-            color: white;
-            padding: 25px;
-            border-radius: 15px;
-            text-align: center;
-            margin: 40px 0;
-            box-shadow: var(--shadow);
+            font-size: 0.9rem;
         }
 
         /* Responsive Design */
-        @media (max-width: 1100px) {
+        @media (max-width: 968px) {
             .hero {
                 flex-direction: column;
                 text-align: center;
-                gap: 40px;
+                gap: 30px;
             }
             
             .profile-image {
-                width: 200px;
-                height: 200px;
+                width: 180px;
+                height: 180px;
             }
             
             h1 {
-                font-size: 2.8rem;
+                font-size: 2.5rem;
             }
             
             h2 {
-                font-size: 2.2rem;
+                font-size: 1.9rem;
             }
         }
 
         @media (max-width: 768px) {
             .page {
-                padding: 50px 30px;
+                padding: 40px 25px;
             }
             
             .content-grid {
@@ -567,46 +557,50 @@
             }
             
             .timeline:before {
-                left: 25px;
+                left: 20px;
             }
             
             .timeline-item {
-                padding-left: 70px;
+                padding-left: 60px;
             }
             
             .timeline-year {
-                width: 60px;
-                height: 60px;
-                font-size: 1.1rem;
+                width: 50px;
+                height: 50px;
+                font-size: 1rem;
             }
         }
 
         @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+            
             h1 {
                 font-size: 2.2rem;
             }
             
             h2 {
-                font-size: 1.8rem;
+                font-size: 1.7rem;
             }
             
             .profile-image {
-                width: 170px;
-                height: 170px;
+                width: 150px;
+                height: 150px;
             }
             
             .card {
-                padding: 25px;
+                padding: 20px;
             }
             
             .page {
-                padding: 40px 20px;
+                padding: 30px 20px;
             }
         }
 
         /* Animation subtile */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(40px); }
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -628,7 +622,7 @@
                 </div>
                 <div class="hero-content">
                     <div class="name">Marcelle Larissa Tankui Tchouamouo</div>
-                    <div class="tagline">Architecte Logicielle & Data Scientist en devenir</div>
+                    <div class="tagline">Future Architecte Logicielle & Data Scientist</div>
                     <div class="slogan">
                         "Concevoir l'avenir financier de l'Afrique grâce à l'innovation technologique et l'intelligence des données"
                     </div>
@@ -656,7 +650,7 @@
                         <i class="fas fa-laptop-code"></i>
                     </div>
                     <h3>Génie Logiciel</h3>
-                    <p>Spécialisation en architecture des systèmes financiers et développement d'applications bancaires sécurisées pour le marché africain.</p>
+                    <p>Développement d'applications bancaires sécurisées et architecture de systèmes financiers pour le marché africain.</p>
                     <div class="image-container">
                         <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Génie Logiciel">
                         <div class="image-overlay">Génie Logiciel</div>
@@ -667,7 +661,7 @@
                         <i class="fas fa-chart-bar"></i>
                     </div>
                     <h3>Data Science</h3>
-                    <p>Expertise en analyse de données financières, machine learning et intelligence artificielle appliquée à la banque et à la gestion des risques.</p>
+                    <p>Analyse de données financières, machine learning et intelligence artificielle appliquée à la banque et gestion des risques.</p>
                     <div class="image-container">
                         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Data Science">
                         <div class="image-overlay">Data Science</div>
@@ -688,7 +682,7 @@
                     <div class="timeline-year">2025</div>
                     <div class="timeline-content">
                         <h3>Licence en Génie Logiciel</h3>
-                        <p>Obtention de ma licence avec une spécialisation en développement d'applications et architecture logicielle. Formation solide en algorithmique, bases de données et développement web.</p>
+                        <p>Obtention de ma licence en génie logiciel. Formation complète en développement logiciel, algorithmique, bases de données et technologies web.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -889,12 +883,6 @@
                         <p>Contribuer à l'inclusion financière et la transformation digitale en Afrique grâce à des solutions technologiques innovantes et accessibles.</p>
                     </div>
                 </div>
-            </div>
-
-            <div class="deadline-notice">
-                <h3>Dates importantes AfricanWITS</h3>
-                <p><strong>Soumission du portfolio :</strong> 22 Octobre 2025</p>
-                <p><strong>Présentation du pitch :</strong> 25 Octobre 2025</p>
             </div>
 
             <div class="footer">
