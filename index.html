@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projet Professionnel - Marcelle Tchouamouo</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #2563eb;
@@ -114,6 +114,7 @@
 
         .profile-container {
             flex-shrink: 0;
+            position: relative;
         }
 
         .profile-image {
@@ -123,6 +124,30 @@
             object-fit: cover;
             border: 6px solid var(--white);
             box-shadow: var(--shadow);
+        }
+
+        .change-photo-btn {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background: var(--accent);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .change-photo-btn:hover {
+            transform: scale(1.1);
+            background: var(--primary);
         }
 
         .hero-content {
@@ -216,12 +241,28 @@
             color: white;
             font-weight: 600;
             font-size: 1.1rem;
+            position: relative;
         }
 
         .image-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
         }
 
         .timeline {
@@ -515,7 +556,10 @@
         <div class="page">
             <div class="hero">
                 <div class="profile-container">
-                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Marcelle Tchouamouo" class="profile-image">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Marcelle Tchouamouo" class="profile-image" id="profileImage">
+                    <button class="change-photo-btn" onclick="changeProfilePhoto()">
+                        <i class="fas fa-camera"></i>
+                    </button>
                 </div>
                 <div class="hero-content">
                     <div class="name">Marcelle Larissa Tankui Tchouamouo</div>
@@ -530,7 +574,7 @@
                         </div>
                         <div class="advisor-card">
                             <div class="advisor-name">M. Jacques Agbegbo</div>
-                            <div class="advisor-role">Encadreur Académique</div>
+                            <div class="advisor-role">Encadreur AfricanWITS</div>
                         </div>
                     </div>
                 </div>
@@ -547,6 +591,7 @@
                     <p>Spécialisation en architecture des systèmes financiers et développement d'applications bancaires sécurisées.</p>
                     <div class="image-container">
                         <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Génie Logiciel">
+                        <div class="image-overlay">Génie Logiciel</div>
                     </div>
                 </div>
                 <div class="card">
@@ -557,6 +602,7 @@
                     <p>Expertise en analyse de données financières, machine learning et intelligence artificielle appliquée à la banque.</p>
                     <div class="image-container">
                         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Data Science">
+                        <div class="image-overlay">Data Science</div>
                     </div>
                 </div>
                 <div class="card">
@@ -566,7 +612,8 @@
                     <h3>Développement Communautaire</h3>
                     <p>Mentorat des jeunes femmes dans la tech et contribution à l'écosystème FinTech africain.</p>
                     <div class="image-container">
-                        Développement Communautaire
+                        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Développement Communautaire">
+                        <div class="image-overlay">Développement Communautaire</div>
                     </div>
                 </div>
             </div>
@@ -723,7 +770,7 @@
                     <div class="card-icon">
                         <i class="fas fa-rocket"></i>
                     </div>
-                    <h3>2025-2026</h3>
+                    <h3>Nov 2025 - Présent</h3>
                     <h4>Développeuse Full-Stack - Startup FinTech</h4>
                     <ul>
                         <li>Développement d'applications de paiement mobile</li>
@@ -812,6 +859,35 @@
     </div>
 
     <script>
+        // Fonction pour changer la photo de profil
+        function changeProfilePhoto() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            
+            input.onchange = function(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        document.getElementById('profileImage').src = e.target.result;
+                        localStorage.setItem('profilePhoto', e.target.result);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            };
+            
+            input.click();
+        }
+
+        // Charger la photo sauvegardée
+        window.addEventListener('DOMContentLoaded', function() {
+            const savedPhoto = localStorage.getItem('profilePhoto');
+            if (savedPhoto) {
+                document.getElementById('profileImage').src = savedPhoto;
+            }
+        });
+
         // Animation au défilement
         const observerOptions = {
             threshold: 0.1,
