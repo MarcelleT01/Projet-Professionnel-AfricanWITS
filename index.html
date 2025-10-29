@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projet Professionnel - Marcelle Tchouamouo</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Ma Page Web</title>
     <style>
         :root {
             --primary: #1a365d;
@@ -54,10 +52,12 @@
             margin-bottom: 25px;
             border-radius: 16px;
             box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .page:last-child {
-            margin-bottom: 0;
+        .page:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
 
         .page-header {
@@ -89,7 +89,7 @@
             font-family: 'Playfair Display', serif;
         }
 
-        h2:after {
+        h2::after {
             content: '';
             position: absolute;
             bottom: -12px;
@@ -98,18 +98,6 @@
             height: 4px;
             background: var(--accent);
             border-radius: 2px;
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-
-        h4 {
-            font-size: 1.2rem;
-            color: var(--secondary);
-            margin-bottom: 12px;
         }
 
         .hero {
@@ -121,7 +109,6 @@
 
         .profile-container {
             flex-shrink: 0;
-            position: relative;
         }
 
         .profile-image {
@@ -133,830 +120,92 @@
             box-shadow: var(--shadow);
         }
 
-        .change-photo-btn {
-            position: absolute;
-            bottom: 15px;
-            right: 15px;
-            background: var(--accent);
+        /* Styles pour les boutons */
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary);
             color: var(--white);
-            border: none;
-            border-radius: 50%;
-            width: 45px;
-            height: 45px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            transition: all 0.3s ease;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        .change-photo-btn:hover {
-            transform: scale(1.1);
-            background: var(--primary);
+        .button:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
         }
 
-        .hero-content {
-            flex: 1;
-        }
-
-        .name {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--dark);
-            margin-bottom: 10px;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .tagline {
-            font-size: 1.4rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
-
-        .slogan {
-            font-size: 1.1rem;
-            font-style: italic;
-            color: var(--text-light);
-            padding: 20px;
-            background: rgba(26, 54, 93, 0.05);
-            border-radius: 12px;
-            border-left: 4px solid var(--accent);
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-
-        .content-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin: 35px 0;
-        }
-
+        /* Styles pour les cartes */
         .card {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 14px;
+            background-color: var(--white);
+            border-radius: 12px;
             box-shadow: var(--card-shadow);
-            transition: all 0.3s ease;
-            border: 1px solid #e2e8f0;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--gradient);
+            padding: 20px;
+            margin-bottom: 20px;
         }
 
         .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        .card-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-
-        .card h3 {
-            margin-bottom: 15px;
-        }
-
-        .card p {
-            margin-bottom: 15px;
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        .card ul {
-            padding-left: 20px;
-            margin-bottom: 20px;
-        }
-
-        .card li {
-            margin-bottom: 8px;
-            color: var(--text);
-            line-height: 1.5;
-        }
-
-        .image-container {
-            width: 100%;
-            height: 180px;
-            border-radius: 10px;
-            overflow: hidden;
-            margin-top: auto;
-            background: var(--gradient);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 600;
-            font-size: 1.1rem;
-            position: relative;
-        }
-
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .image-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 600;
-            font-size: 1.2rem;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-        }
-
-        .timeline {
-            position: relative;
-            max-width: 850px;
-            margin: 40px auto;
-        }
-
-        .timeline:before {
-            content: '';
-            position: absolute;
-            left: 30px;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: var(--primary);
-            border-radius: 2px;
-        }
-
-        .timeline-item {
-            margin-bottom: 40px;
-            padding-left: 80px;
-            position: relative;
-        }
-
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .timeline-year {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 60px;
-            height: 60px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.1rem;
-            box-shadow: var(--shadow);
-            border: 4px solid var(--white);
-        }
-
-        .timeline-content {
-            background: var(--white);
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: var(--card-shadow);
-            border-left: 4px solid var(--accent);
-        }
-
-        .timeline-content h3 {
-            margin-bottom: 12px;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin: 30px 0;
-        }
-
-        .skill-item {
-            background: var(--white);
-            padding: 16px;
-            border-radius: 10px;
-            text-align: center;
-            border: 1px solid #e2e8f0;
-            font-weight: 600;
-            transition: all 0.2s ease;
-            box-shadow: var(--card-shadow);
-            font-size: 1rem;
-        }
-
-        .skill-item:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-            background: var(--primary);
-            color: white;
-        }
-
-        .certifications-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin: 40px 0;
-        }
-
-        .cert-card {
-            background: var(--white);
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: var(--card-shadow);
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            transition: all 0.3s ease;
-            border: 1px solid #e2e8f0;
-        }
-
-        .cert-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .cert-logo {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-
-        .cert-info h4 {
-            margin-bottom: 8px;
-        }
-
-        .cert-info p {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-
-        .impact-section {
-            background: linear-gradient(135deg, #edf2f7 0%, #e2e8f0 100%);
-            padding: 50px 40px;
-            border-radius: 16px;
-            margin: 50px 0;
-            border: 1px solid #cbd5e0;
-        }
-
-        .impact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-
-        .impact-card {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 14px;
-            text-align: center;
-            box-shadow: var(--card-shadow);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .impact-card:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--gradient);
-        }
-
-        .impact-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        .impact-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 60px;
-            padding-top: 30px;
-            border-top: 1px solid #e2e8f0;
-            color: var(--text-light);
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--text);
-            font-weight: 500;
-        }
-
-        .advisor-section {
-            display: flex;
-            gap: 25px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
-
-        .advisor-card {
-            background: var(--white);
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: var(--card-shadow);
-            flex: 1;
-            min-width: 250px;
-            text-align: center;
-            border-top: 4px solid var(--primary);
-            transition: all 0.3s ease;
-        }
-
-        .advisor-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .advisor-name {
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--dark);
-            margin-bottom: 5px;
-        }
-
-        .advisor-role {
-            color: var(--text-light);
-            font-size: 0.9rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
 
         /* Responsive Design */
-        @media (max-width: 968px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                gap: 30px;
-            }
-            
-            .profile-image {
-                width: 180px;
-                height: 180px;
-            }
-            
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            h2 {
-                font-size: 1.9rem;
-            }
-        }
-
         @media (max-width: 768px) {
-            .page {
-                padding: 40px 25px;
+            .hero {
+                flex-direction: column; /* Stack items on smaller screens */
+                align-items: center; /* Center items */
+                text-align: center; /* Center text */
+                gap: 20px; /* Reduce gap */
+                margin-bottom: 30px; /* Reduce margin */
             }
-            
-            .content-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .timeline:before {
-                left: 20px;
-            }
-            
-            .timeline-item {
-                padding-left: 60px;
-            }
-            
-            .timeline-year {
-                width: 50px;
-                height: 50px;
-                font-size: 1rem;
-            }
-        }
 
-        @media (max-width: 480px) {
-            body {
-                padding: 15px;
-            }
-            
             h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem; /* Adjust heading size */
+                margin-bottom: 10px; /* Adjust margin */
             }
-            
+
             h2 {
-                font-size: 1.7rem;
+                font-size: 1.8rem; /* Adjust heading size */
+                margin-bottom: 30px; /* Adjust margin */
             }
-            
-            .profile-image {
-                width: 150px;
-                height: 150px;
-            }
-            
-            .card {
-                padding: 20px;
-            }
-            
-            .page {
-                padding: 30px 20px;
-            }
-        }
-
-        /* Animation subtile */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .page {
-            animation: fadeIn 0.8s ease-out;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Page 1: Présentation -->
         <div class="page">
+            <div class="page-header">
+                <h1>Bienvenue sur ma page</h1>
+                <h2>Découvrez mes projets</h2>
+                <a href="#" class="button">Commencer</a>
+            </div>
+            
             <div class="hero">
                 <div class="profile-container">
-                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Marcelle Tchouamouo" class="profile-image" id="profileImage">
-                    <button class="change-photo-btn" onclick="changeProfilePhoto()">
-                        <i class="fas fa-camera"></i>
-                    </button>
+                    <img src="https://via.placeholder.com/200" alt="Mon Profil" class="profile-image">
                 </div>
-                <div class="hero-content">
-                    <div class="name">Marcelle Larissa Tankui Tchouamouo</div>
-                    <div class="tagline">Future Architecte Logicielle & Data Scientist</div>
-                    <div class="slogan">
-                        "Concevoir l'avenir financier de l'Afrique grâce à l'innovation technologique et l'intelligence des données"
-                    </div>
-                    <div class="advisor-section">
-                        <div class="advisor-card">
-                            <div class="advisor-name">M. Tankui Frank</div>
-                            <div class="advisor-role">Mentor Principal</div>
-                        </div>
-                        <div class="advisor-card">
-                            <div class="advisor-name">M. Jacques Agbegbo</div>
-                            <div class="advisor-role">Encadreur AfricanWITS</div>
-                        </div>
-                    </div>
+                <div>
+                    <h3>À propos de moi</h3>
+                    <p>Je suis un développeur passionné par la création de solutions web modernes et efficaces.</p>
                 </div>
             </div>
 
-            <div class="page-header">
-                <h2>Mon Projet Professionnel</h2>
-                <p>Une vision ambitieuse pour une carrière d'excellence dans la FinTech africaine</p>
-            </div>
+            <h3>Mes Projets</h3>
             
-            <div class="content-grid">
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>Génie Logiciel</h3>
-                    <p>Développement d'applications bancaires sécurisées et architecture de systèmes financiers pour le marché africain.</p>
-                    <div class="image-container">
-                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Génie Logiciel">
-                        <div class="image-overlay">Génie Logiciel</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <h3>Data Science</h3>
-                    <p>Analyse de données financières, machine learning et intelligence artificielle appliquée à la banque et gestion des risques.</p>
-                    <div class="image-container">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Data Science">
-                        <div class="image-overlay">Data Science</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Page 2: Parcours Académique -->
-        <div class="page">
-            <div class="page-header">
-                <h2>Parcours Académique</h2>
-                <p>Une formation d'excellence alliant génie logiciel et data science</p>
+            <div class="card">
+                <h4>Projet A</h4>
+                <p>Description du projet A. Un projet qui fait quelque chose d'incroyable.</p>
+                <a href="#" class="button">Voir le projet</a>
             </div>
 
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-year">2025</div>
-                    <div class="timeline-content">
-                        <h3>Licence en Génie Logiciel</h3>
-                        <p>Obtention de ma licence en génie logiciel. Formation complète en développement logiciel, algorithmique, bases de données et technologies web.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2025-2027</div>
-                    <div class="timeline-content">
-                        <h3>Master en Génie Logiciel</h3>
-                        <p>Début de mon master à l'IUT de Douala, spécialisation Architecture des Systèmes d'Information. Cours avancés en conception de systèmes distribués, sécurité informatique et gestion de projet.</p>
-                        <p><strong>En parallèle:</strong> Début de carrière dans une FinTech en tant que développeuse full-stack.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2027-2029</div>
-                    <div class="timeline-content">
-                        <h3>Double Master en Data Science</h3>
-                        <p>Début de mon double master en Data Science à l'étranger, en partenariat avec l'IUC. Spécialisation en Machine Learning appliqué à la finance, analyse des risques et intelligence artificielle.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Page 3: Compétences -->
-        <div class="page">
-            <div class="page-header">
-                <h2>Compétences Techniques</h2>
-                <p>Un profil unique combinant génie logiciel et expertise data</p>
+            <div class="card">
+                <h4>Projet B</h4>
+                <p>Description du projet B. Un autre projet qui est tout aussi impressionnant.</p>
+                <a href="#" class="button">Voir le projet</a>
             </div>
 
-            <h3>Stack Technique Actuelle</h3>
-            <div class="skills-grid">
-                <div class="skill-item">JavaScript/TypeScript</div>
-                <div class="skill-item">React & Node.js</div>
-                <div class="skill-item">Python & Django</div>
-                <div class="skill-item">Java & Spring Boot</div>
-                <div class="skill-item">SQL & MongoDB</div>
-                <div class="skill-item">APIs REST & GraphQL</div>
-                <div class="skill-item">Git & DevOps</div>
-                <div class="skill-item">Docker & Kubernetes</div>
-            </div>
-
-            <h3>Compétences Futures à Développer</h3>
-            <div class="content-grid">
-                <div class="card">
-                    <h4>Data Science & ML</h4>
-                    <ul>
-                        <li>Machine Learning avancé</li>
-                        <li>Deep Learning & NLP</li>
-                        <li>Big Data Technologies</li>
-                        <li>Data Visualization</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h4>Architecture Cloud</h4>
-                    <ul>
-                        <li>AWS & Azure Certified</li>
-                        <li>Microservices Architecture</li>
-                        <li>System Design</li>
-                        <li>Security & Compliance</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h4>Finance & Banque</h4>
-                    <ul>
-                        <li>Réglementation bancaire</li>
-                        <li>Systèmes de paiement</li>
-                        <li>Risk Management</li>
-                        <li>Blockchain & Crypto</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Page 4: Certifications -->
-        <div class="page">
-            <div class="page-header">
-                <h2>Certifications Stratégiques</h2>
-                <p>Des certifications reconnues pour renforcer mon expertise</p>
-            </div>
-
-            <div class="certifications-grid">
-                <div class="cert-card">
-                    <div class="cert-logo">
-                        <i class="fab fa-aws"></i>
-                    </div>
-                    <div class="cert-info">
-                        <h4>AWS Certified Solutions Architect</h4>
-                        <p>Architecture cloud pour applications financières scalables et sécurisées. Certification essentielle pour le déploiement d'applications dans le cloud.</p>
-                    </div>
-                </div>
-                <div class="cert-card">
-                    <div class="cert-logo">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <div class="cert-info">
-                        <h4>Certified Ethical Hacker</h4>
-                        <p>Sécurité des applications et systèmes financiers. Compétences en cybersécurité pour protéger les données sensibles des institutions financières.</p>
-                    </div>
-                </div>
-                <div class="cert-card">
-                    <div class="cert-logo">
-                        <i class="fab fa-google"></i>
-                    </div>
-                    <div class="cert-info">
-                        <h4>Google Professional Data Engineer</h4>
-                        <p>Gestion de données financières à grande échelle. Conception de pipelines de données et mise en place de solutions Big Data.</p>
-                    </div>
-                </div>
-                <div class="cert-card">
-                    <div class="cert-logo">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <div class="cert-info">
-                        <h4>Microsoft Azure Data Scientist</h4>
-                        <p>Machine Learning et analytics pour la finance. Développement de modèles prédictifs et solutions d'IA pour le secteur bancaire.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Page 5: Expériences Professionnelles -->
-        <div class="page">
-            <div class="page-header">
-                <h2>Parcours Professionnel</h2>
-                <p>Une progression stratégique dans le secteur FinTech</p>
-            </div>
-
-            <div class="content-grid">
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h3>Nov 2025 - Présent</h3>
-                    <h4>Développeuse Full-Stack - Startup FinTech</h4>
-                    <ul>
-                        <li>Développement d'applications de paiement mobile sécurisées</li>
-                        <li>Conception d'APIs bancaires et intégration de systèmes de paiement</li>
-                        <li>Collaboration avec l'équipe produit pour définir les spécifications techniques</li>
-                        <li>Mise en place de pratiques DevOps et d'intégration continue</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>2027-2028</h3>
-                    <h4>Software Architect - Institution Bancaire</h4>
-                    <ul>
-                        <li>Architecture de systèmes financiers complexes et scalables</li>
-                        <li>Migration vers le cloud et modernisation des infrastructures</li>
-                        <li>Encadrement d'équipes de développement et revue de code</li>
-                        <li>Définition des standards techniques et des bonnes pratiques</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-crown"></i>
-                    </div>
-                    <h3>2029-2030</h3>
-                    <h4>Head of Technology - Scale-up FinTech</h4>
-                    <ul>
-                        <li>Direction de la stratégie technologique et de l'innovation</li>
-                        <li>Management d'équipes pluridisciplinaires et développement des talents</li>
-                        <li>Supervision de l'architecture technique et de la roadmap produit</li>
-                        <li>Représentation technique auprès des investisseurs et partenaires</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Page 6: Impact & Vision -->
-        <div class="page">
-            <div class="page-header">
-                <h2>Impact & Vision</h2>
-                <p>Contribuer au développement technologique et économique de l'Afrique</p>
-            </div>
-
-            <div class="impact-section">
-                <h3>Impact Multi-dimensionnel</h3>
-                <div class="impact-grid">
-                    <div class="impact-card">
-                        <div class="impact-icon">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <h3>Impact Personnel</h3>
-                        <p>Devenir une référence dans l'architecture logicielle et la data science en Afrique, avec une expertise reconnue internationalement.</p>
-                    </div>
-                    <div class="impact-card">
-                        <div class="impact-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3>Impact Communautaire</h3>
-                        <p>Mentorat de 100+ jeunes femmes dans la tech d'ici 2028 et création d'une communauté dédiée à l'empowerment féminin dans la technologie.</p>
-                    </div>
-                    <div class="impact-card">
-                        <div class="impact-icon">
-                            <i class="fas fa-globe-africa"></i>
-                        </div>
-                        <h3>Impact Sociétal</h3>
-                        <p>Contribuer à l'inclusion financière et la transformation digitale en Afrique grâce à des solutions technologiques innovantes et accessibles.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer">
-                <p><strong>Marcelle Tchouamouo</strong> - Projet Professionnel AfricanWITS 2025</p>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>mtchouamouo@gmail.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-github"></i>
-                        <span>MarcelleT01</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <span>Marcelle Tchouamouo</span>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
-
-    <script>
-        // Fonction pour changer la photo de profil
-        function changeProfilePhoto() {
-            const input = document.createElement('input');
-            input.type = 'file';
-            input.accept = 'image/*';
-            
-            input.onchange = function(event) {
-                const file = event.target.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                        document.getElementById('profileImage').src = e.target.result;
-                        localStorage.setItem('profilePhoto', e.target.result);
-                    };
-                    reader.readAsDataURL(file);
-                }
-            };
-            
-            input.click();
-        }
-
-        // Charger la photo sauvegardée
-        window.addEventListener('DOMContentLoaded', function() {
-            const savedPhoto = localStorage.getItem('profilePhoto');
-            if (savedPhoto) {
-                document.getElementById('profileImage').src = savedPhoto;
-            }
-        });
-
-        // Animation au défilement
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Appliquer l'animation aux cartes
-        document.querySelectorAll('.card, .timeline-item, .impact-card').forEach(element => {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(20px)';
-            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(element);
-        });
-    </script>
 </body>
 </html>
